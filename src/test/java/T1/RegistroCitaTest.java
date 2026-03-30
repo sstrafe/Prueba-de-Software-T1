@@ -50,4 +50,14 @@ class RegistroCitaTest {
         Cita cita = new Cita("C123", "", 12345678, fecha);
         assertEquals("Debe ingresar todos los datos requeridos", registro.registrarCita(cita));
     }
+
+    @Test
+    @DisplayName("Verificar que la cita se guarde en la lista tras un registro exitoso")
+    void validarGuardadoDeCita() {
+        RegistroCita registro = new RegistroCita();
+        java.util.Date fechaFutura = java.sql.Date.valueOf("2026-12-31");
+        Cita cita = new Cita("C123", "Juan Perez", 12345678, fechaFutura);
+        registro.registrarCita(cita);
+        assertEquals(1, registro.obtenerCantidadCitas());
+    }
 }

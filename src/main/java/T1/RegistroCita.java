@@ -24,4 +24,7 @@ public class RegistroCita {
         }
         return "La cita ha sido registrada correctamente";
     }
+     int obtenerCantidadCitas() {
+        return citas.size();
+    }
 }
