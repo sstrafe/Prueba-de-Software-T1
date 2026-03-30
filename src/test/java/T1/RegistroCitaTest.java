@@ -12,7 +12,7 @@ class RegistroCitaTest {
     void validarCodigoCita() {
         RegistroCita registro = new RegistroCita();
         java.util.Date fecha = java.sql.Date.valueOf("2025-12-31");
-        Cita cita = new Cita("C123", "Juan Perez", 12345678, fecha);
+        Cita cita = new Cita("A123", "Juan Perez", 12345678, fecha);
         assertEquals("Ingrese un código de cita válido", registro.registrarCita(cita));
     }
 }
