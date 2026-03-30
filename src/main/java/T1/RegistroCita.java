@@ -11,6 +11,9 @@ public class RegistroCita {
         if (cita.getCodigo() == null || !cita.getCodigo().matches("^C\\d{3}$")) {
             return "Ingrese un código de cita válido";
         }
+        if (cita.getNombre() == null || !cita.getNombre().matches("^[a-zA-Z\\s]{5,}$")) {
+            return "El nombre del paciente debe tener al menos cinco caracteres alfabéticos";
+        }
         return "La cita ha sido registrada correctamente";
     }
 }
