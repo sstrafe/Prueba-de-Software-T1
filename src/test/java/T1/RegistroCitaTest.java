@@ -21,9 +21,15 @@ class RegistroCitaTest {
     void validarNombrePaciente() {
         RegistroCita registro = new RegistroCita();
         java.util.Date fecha = java.sql.Date.valueOf("2026-12-31");
-        // Enviamos un nombre inválido (muy corto y con números)
         Cita cita = new Cita("C123", "Lui1", 12345678, fecha);
-
         assertEquals("El nombre del paciente debe tener al menos cinco caracteres alfabéticos", registro.registrarCita(cita));
+    }
+    @Test
+    @DisplayName("Validar documento exactamente 8 dígitos")
+    void validarDocumento() {
+        RegistroCita registro = new RegistroCita();
+        java.util.Date fecha = java.sql.Date.valueOf("2026-12-31");
+        Cita cita = new Cita("C123", "Juan Perez", 123, fecha);
+        assertEquals("Ingrese un número de documento válido", registro.registrarCita(cita));
     }
 }
