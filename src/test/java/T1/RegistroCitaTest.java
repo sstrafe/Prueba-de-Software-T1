@@ -41,4 +41,13 @@ class RegistroCitaTest {
         Cita cita = new Cita("C123", "Juan Perez", 12345678, fechaPasada);
         assertEquals("La fecha de la cita debe ser posterior a la fecha actual", registro.registrarCita(cita));
     }
+
+    @Test
+    @DisplayName("Validar que no existan campos vacíos")
+    void validarCamposVacios() {
+        RegistroCita registro = new RegistroCita();
+        java.util.Date fecha = java.sql.Date.valueOf("2026-12-31");
+        Cita cita = new Cita("C123", "", 12345678, fecha);
+        assertEquals("Debe ingresar todos los datos requeridos", registro.registrarCita(cita));
+    }
 }
