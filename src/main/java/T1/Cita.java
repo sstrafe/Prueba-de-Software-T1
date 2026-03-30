@@ -17,6 +17,9 @@ public class Cita {
 
     }
 
+    public Cita() {
+    }
+
     public String getCodigo() {
         return codigo;
     }
