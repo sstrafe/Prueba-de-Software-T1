@@ -14,6 +14,9 @@ public class RegistroCita {
         if (cita.getNombre() == null || !cita.getNombre().matches("^[a-zA-Z\\s]{5,}$")) {
             return "El nombre del paciente debe tener al menos cinco caracteres alfabéticos";
         }
+        if (cita.getDocumento() < 10000000 || cita.getDocumento() > 99999999) {
+            return "Ingrese un número de documento válido";
+        }
         return "La cita ha sido registrada correctamente";
     }
 }
