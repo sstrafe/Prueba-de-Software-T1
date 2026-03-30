@@ -22,6 +22,7 @@ public class RegistroCita {
         if (cita.getFecha() == null || !cita.getFecha().after(new java.util.Date())) {
             return "La fecha de la cita debe ser posterior a la fecha actual";
         }
+        citas.add(cita);
         return "La cita ha sido registrada correctamente";
     }
      int obtenerCantidadCitas() {
