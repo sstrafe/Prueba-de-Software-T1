@@ -17,6 +17,9 @@ public class RegistroCita {
         if (cita.getDocumento() < 10000000 || cita.getDocumento() > 99999999) {
             return "Ingrese un número de documento válido";
         }
+        if (cita.getFecha() == null || !cita.getFecha().after(new java.util.Date())) {
+            return "La fecha de la cita debe ser posterior a la fecha actual";
+        }
         return "La cita ha sido registrada correctamente";
     }
 }
