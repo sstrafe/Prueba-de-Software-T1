@@ -32,4 +32,13 @@ class RegistroCitaTest {
         Cita cita = new Cita("C123", "Juan Perez", 123, fecha);
         assertEquals("Ingrese un número de documento válido", registro.registrarCita(cita));
     }
+
+    @Test
+    @DisplayName("Validar fecha posterior a la actual")
+    void validarFechaCita() {
+        RegistroCita registro = new RegistroCita();
+        java.util.Date fechaPasada = java.sql.Date.valueOf("2020-01-01");
+        Cita cita = new Cita("C123", "Juan Perez", 12345678, fechaPasada);
+        assertEquals("La fecha de la cita debe ser posterior a la fecha actual", registro.registrarCita(cita));
+    }
 }
